@@ -23,6 +23,15 @@ unsigned int swapbits(unsigned int num, unsigned int bitIndex1, unsigned int bit
 	return num;
 }
 
+unsigned int swapbits_aziz(unsigned int num, unsigned int bitIndex1, unsigned int bitIndex2)
+{
+	if (((num >> bitIndex1) & 1) != ((num >> bitIndex2) & 1))
+	{
+		num ^= (1 << bitIndex1) | (1 << bitIndex2);
+	}
+	return num;
+}
+
 int main(int argc, char **argvc)
 {
 	printf("\nSIZE OF INT:%u", INT_SIZE);
